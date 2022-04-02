@@ -1,0 +1,45 @@
+---
+version: "3.5"
+
+services:
+  crud:
+    build:
+      context: ../../
+      dockerfile: docker/local/Dockerfile
+    image: crud/crud:latest
+    container_name: crud
+    ports:
+      - "8080:8080"
+    environment:
+      - ENV_VAR1=env_var1_value
+    tty: true
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13.6
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - "data:/var/lib/postgresql/data"
+    networks:
+      - api
+    deploy:
+      resources:
+        limits:
+          memory: 150M
+        reservations:
+          memory: 75M
+
+volumes:
+  data:
+    name: data
+
+networks:
+  api:
+    name: api
