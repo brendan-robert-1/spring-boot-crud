@@ -1,0 +1,10 @@
+spring:
+  main.banner-mode: console
+  output.ansi.enabled: always
+
+
+DB_HOSTNAME: localhost
+DB_PORT: 5432
+DB_NAME: postgres
+DB_USERNAME: postgres
+DB_PASSWORD: postgres

@@ -11,8 +11,10 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - ENV_VAR1=env_var1_value
+      - DB_HOSTNAME=postgres
     tty: true
+    networks:
+      - api
     depends_on:
       - postgres
 
@@ -25,6 +27,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DATABASE=postgres
     volumes:
       - "data:/var/lib/postgresql/data"
     networks:
