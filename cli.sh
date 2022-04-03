@@ -18,6 +18,12 @@ function handle_ps {
   echo
 }
 
+function handle_run {
+    docker stop $1 1>/dev/null 2>/dev/null
+    docker-compose -f docker/local/docker-compose.yaml up -d postgres
+    ./gradlew bootRun
+}
+
 function handle_prune {
   docker system prune -f
   docker volume prune -f
@@ -29,6 +35,7 @@ function handle_input {
       l) handle_lint ;;
       up) handle_up "$2" ;;
       p) handle_prune ;;
+      r) handle_run "$2";;
   esac
 }
 
