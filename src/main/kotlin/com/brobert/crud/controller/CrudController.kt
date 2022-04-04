@@ -42,7 +42,7 @@ class ExampleController(
     ) = crudService.updateHello(id, message)
 
     @PostMapping(
-        path = ["$DOMAIN_PATH/id/{id}/delete"],
+        path = ["$DOMAIN_PATH/id/{id}/message/{messs}delete"],
         produces = [APPLICATION_JSON_VALUE]
     )
     fun deleteHello(
