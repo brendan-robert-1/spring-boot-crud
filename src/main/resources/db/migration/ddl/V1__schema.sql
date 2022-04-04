@@ -1,6 +1,6 @@
 CREATE SCHEMA IF NOT EXISTS crud_schema;
 CREATE TABLE IF NOT EXISTS crud_schema.hello(
     pk BIGSERIAL PRIMARY KEY,
-    id VARCHAR(255) NOT NULL,
+    hello_id VARCHAR(255) NOT NULL,
     message VARCHAR(255) NOT NULL
 );
