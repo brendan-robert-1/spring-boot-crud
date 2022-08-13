@@ -1,38 +1,38 @@
 spring:
   profiles.active: local
-  main.banner-mode: off
-  output.ansi.enabled: never
-  datasource:
-    driverClassName: org.postgresql.Driver
-    url: "jdbc:postgresql://${DB_HOSTNAME}:${DB_PORT}/${DB_NAME}"
-    username: postgres
-    password: postgres
-  jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    open-in-view: false
-    show-sql: false
-    hibernate.ddl-auto: validate
-    properties:
-      javax.persistence.sharedCache.mode: ENABLE_SELECTIVE
-      hibernate:
-        temp.use_jdbc_metadata_defaults: false
-        default_schema: crud_schema
-        format_sql: true
-        generate_statistics: false
-        cache:
-          use_second_level_cache: true
-          use_query_cache: true
-          region.factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
-        javax.cache.missing_cache_strategy: create
-  flyway:
-    enabled: true
-    baseline-on-migrate: true
-    default-schema: crud_schema
-    schemas: crud_schema
-    clean-on-validation-error: false
-    locations:
-      - classpath:db/migration
-  sql:
-    init:
-      platform: postgresql
-      mode: always
+#  main.banner-mode: off
+#  output.ansi.enabled: never
+#  datasource:
+#    driverClassName: org.postgresql.Driver
+#    url: "jdbc:postgresql://${DB_HOSTNAME}:${DB_PORT}/${DB_NAME}"
+#    username: postgres
+#    password: postgres
+#  jpa:
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    open-in-view: false
+#    show-sql: false
+#    hibernate.ddl-auto: validate
+#    properties:
+#      javax.persistence.sharedCache.mode: ENABLE_SELECTIVE
+#      hibernate:
+#        temp.use_jdbc_metadata_defaults: false
+#        default_schema: crud_schema
+#        format_sql: true
+#        generate_statistics: false
+#        cache:
+#          use_second_level_cache: true
+#          use_query_cache: true
+#          region.factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
+#        javax.cache.missing_cache_strategy: create
+#  flyway:
+#    enabled: true
+#    baseline-on-migrate: true
+#    default-schema: crud_schema
+#    schemas: crud_schema
+#    clean-on-validation-error: false
+#    locations:
+#      - classpath:db/migration
+#  sql:
+#    init:
+#      platform: postgresql
+#      mode: always

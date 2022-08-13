@@ -30,13 +30,13 @@ dependencies {
     implementation("net.logstash.logback:logstash-logback-encoder:5.2")
 
     // jpa
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.hibernate:hibernate-envers")
-    implementation("org.hibernate:hibernate-jcache")
-    runtimeOnly("org.ehcache:ehcache")
-    implementation("org.flywaydb:flyway-core")
-    runtimeOnly("org.postgresql:postgresql")
-    testRuntimeOnly("com.h2database:h2")
+//    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+//    implementation("org.hibernate:hibernate-envers")
+//    implementation("org.hibernate:hibernate-jcache")
+    // runtimeOnly("org.ehcache:ehcache")
+    // implementation("org.flywaydb:flyway-core")
+//    runtimeOnly("org.postgresql:postgresql")
+//    testRuntimeOnly("com.h2database:h2")
 }
 
 tasks.withType<KotlinCompile> {

@@ -6,14 +6,13 @@ import com.brobert.crud.exception.InternalServerErrorException
 import com.brobert.crud.exception.NotFoundException
 import com.brobert.crud.exception.PreconditionFailedException
 import com.brobert.crud.model.api.response.ErrorResponse
-import org.hibernate.exception.ConstraintViolationException
 import org.springframework.http.HttpStatus
-import org.springframework.http.MediaType.APPLICATION_JSON
 import org.springframework.http.HttpStatus.BAD_REQUEST
 import org.springframework.http.HttpStatus.FORBIDDEN
 import org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR
 import org.springframework.http.HttpStatus.NOT_FOUND
 import org.springframework.http.HttpStatus.PRECONDITION_FAILED
+import org.springframework.http.MediaType.APPLICATION_JSON
 import org.springframework.http.ResponseEntity
 import org.springframework.http.converter.HttpMessageNotReadableException
 import org.springframework.web.bind.MethodArgumentNotValidException
@@ -22,7 +21,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler
 import java.time.Instant
 import javax.servlet.http.HttpServletRequest
 
-
 @ControllerAdvice
 class BaseAdvice {
 
@@ -30,7 +28,6 @@ class BaseAdvice {
      * HTTP 400
      */
     @ExceptionHandler(
-        ConstraintViolationException::class,
         MethodArgumentNotValidException::class,
         HttpMessageNotReadableException::class,
         BadRequestException::class
