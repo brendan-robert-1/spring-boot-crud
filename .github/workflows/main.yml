@@ -1,0 +1,14 @@
+name: Crud On Push
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: self-hosted
+    steps:
+    - run: |
+        echo Branch was pushed
